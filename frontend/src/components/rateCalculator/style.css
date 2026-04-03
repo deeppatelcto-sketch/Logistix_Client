@@ -1,0 +1,1798 @@
+/* GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    overflow: hidden;
+}
+
+/* BODY */
+body {
+    background-color: rgba(100, 155, 197, 0.05);
+    overflow-x: hidden;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* HEADER */
+.header {
+    height: 80px;
+    background-color: rgba(100, 155, 197, 0.3);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    gap: 25px;
+    box-shadow: 0 4px 4px rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 105;
+}
+
+/* BACKSIDE HEADER */
+.back-header {
+    height: 80px;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+
+/* --- HEADER SECTIONS --- */
+.header-left,
+.header-middle,
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+/* HEADER LEFT */
+.header-left {
+    flex: 0 0 auto;
+    justify-content: flex-start;
+}
+
+/* HEADER MIDDLE */
+.header-middle {
+    flex: 0 0 auto;
+}
+
+/* HEADER RIGHT */
+.header-right {
+    flex: 0 0 auto;
+    gap: 20px;
+    justify-content: flex-end;
+    padding-right: 15px;
+}
+
+/* LOGO */
+.logo {
+    height: 90px;
+    margin: 0 75px 0 80px;
+    padding-top: 5px;
+    vertical-align: middle;
+}
+
+/* TOGGLE BUTTON */
+.toggle-btn {
+    position: fixed;
+    top: 95px;
+    left: 214px;
+    margin-left: 15px;
+    height: 22px;
+    width: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(100, 155, 197, 1);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0;
+    overflow: hidden;
+    z-index: 105;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    transition: left 0.3s ease, transform 0.3s ease,
+        background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.toggle-btn:hover {
+    background-color: rgba(80, 140, 185, 1);
+    transform: scale(1.1);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.toggle-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* TOGGLE ICON */
+.right-double-arrow-icon {
+    position: absolute;
+    font-size: 18px;
+    color: white;
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.right-double-arrow-icon.rotated {
+    transform: rotate(180deg);
+}
+
+
+/* SEARCH BAR */
+.search-container {
+    position: relative;
+}
+
+.search-container input {
+    width: 500px;
+    padding: 10px 0 10px 40px;
+    font-size: 11px;
+    font-weight: 400;
+    font-family: 'Poppins';
+    border: none;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.search-container input::placeholder {
+    color: rgba(100, 155, 197, 0.8);
+}
+
+.search-container input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(100, 155, 197, 0.7) !important;
+}
+
+/* SEARCH ICON */
+.search-icon {
+    position: absolute;
+    left: 12px;
+    font-size: 17px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(100, 155, 197, 1);
+}
+
+.search-container:focus-within .search-icon {
+    left: auto;
+    right: 0;
+    width: 40px;
+    height: 100%;
+    background-color: aliceblue;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    cursor: pointer;
+}
+
+.search-container:focus-within input {
+    padding: 10px 40px 10px 10px;
+}
+
+/* HEADER ACTIONS BUTTONS */
+.wallet-btn,
+.notification,
+.user-profile {
+    border: none;
+    border-radius: 9px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* WALLET BUTTON */
+.wallet-btn {
+    background-color: rgba(100, 155, 197, 1);
+    color: white;
+    gap: 6px;
+    font-size: 11px;
+    padding: 6px 9px;
+}
+
+.wallet-btn .wallet-icon {
+    font-size: 18px;
+}
+
+.wallet-btn span,
+.wallet-btn p {
+    font-family: 'Inter';
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+/* NOTIFICATION BUTTON */
+.notification {
+    background-color: rgba(100, 155, 197, 1);
+    color: white;
+    padding: 6px;
+    position: relative;
+}
+
+.notification-bell-icon {
+    font-size: 18px;
+}
+
+.notification .count {
+    position: absolute;
+    top: 5px;
+    right: 6px;
+    width: 9px;
+    height: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter';
+    font-size: 6px;
+    font-weight: 400;
+    background-color: rgba(210, 88, 27, 0.9);
+    color: white;
+    border-radius: 50%;
+}
+
+/* HOVER EFFECTS */
+.wallet-btn:hover,
+.notification:hover,
+.user-profile:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* USER INFO / PROFILE */
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    font-family: 'Poppins';
+    font-weight: 500;
+    color: rgba(100, 155, 197, 1);
+}
+
+.welcome-text {
+    font-size: 15px;
+    line-height: 1.3;
+}
+
+.user-id {
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin-left: 7px;
+}
+
+.arrow-drop-down-icon {
+    font-size: 15px;
+    line-height: 1;
+    vertical-align: middle;
+    transform: translateY(-2px);
+}
+
+.user-profile {
+    padding: 7px;
+    background-color: rgba(100, 155, 197, 1);
+    color: white;
+    display: none;
+}
+
+.user-profile-icon {
+    font-size: 18px;
+}
+
+/* SIDEBAR */
+.sidebar {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    bottom: 0;
+    width: 240px;
+    height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+    background: linear-gradient(to bottom, rgba(100, 155, 197, 1), rgba(48, 75, 95, 1));
+    transition: width 0.3s ease;
+    overflow: visible;
+    scrollbar-width: none;
+    z-index: 100;
+}
+
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar-content {
+    flex: 0 0 auto;
+}
+
+.sidebar-link {
+    display: block;
+    padding: 0 15px;
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 12px;
+    color: white;
+    line-height: 2.3;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    transform: translateX(4px);
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+}
+
+.sidebar-footer .sidebar-link {
+    padding: 0 15px;
+    line-height: 2.3;
+}
+
+.sidebar-items {
+    display: grid;
+    grid-template-columns: 24px 1fr 16px;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar-icons {
+    font-size: 16px;
+    text-align: center;
+    min-width: 24px;
+    transition: transform 0.3s ease, color 0.3s ease, opacity 0.3s ease;
+}
+
+.sidebar-items span {
+    display: inline;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar-link .arrow-icon {
+    height: 14px;
+    display: inline;
+    justify-self: end;
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar-items .last {
+    grid-column: 1 / -1;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 12px;
+}
+
+/* COLLAPSED SIDEBAR */
+.sidebar.collapsed {
+    width: 70px;
+    padding-top: 13.5px;
+}
+
+.sidebar.collapsed .sidebar-items {
+    grid-template-columns: 1fr;
+    height: 32px;
+    justify-items: center;
+}
+
+.sidebar.collapsed .sidebar-items span,
+.sidebar.collapsed .right-arrow-icon,
+.sidebar.collapsed .sidebar-footer .last {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.sidebar.collapsed .sidebar-footer {
+    height: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.sidebar-link .tooltip-text {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    left: 49px;
+    background-color: rgba(51, 51, 51, 0.5);
+    color: rgba(255, 255, 255, 0.6);
+    padding: 4px 9px;
+    font-size: 11px;
+    font-family: 'Poppins';
+    border-radius: 9px;
+    white-space: nowrap;
+    pointer-events: none;
+    transition: opacity 0.2s ease, background-color 0.5s ease 1s, color 0.5s ease 1s;
+    z-index: 9999;
+}
+
+.sidebar-link .tooltip-text::before {
+    content: "";
+    position: absolute;
+    left: -12px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent rgba(51, 51, 51, 0.5) transparent transparent;
+    transition: border-color 0.5s ease 1s;
+}
+
+.sidebar.collapsed .sidebar-link:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+    background-color: rgba(51, 51, 51, 0.95);
+    color: white;
+}
+
+.sidebar.collapsed .sidebar-link:hover .tooltip-text::before {
+    border-color: transparent rgba(51, 51, 51, 0.95) transparent transparent;
+}
+
+/* TOPBAR */
+.top-bar {
+    position: fixed;
+    top: 80px;
+    left: 240px;
+    right: 0;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px 0 45px;
+    font-size: 12px;
+    font-family: 'Poppins';
+    font-weight: 400;
+    background: linear-gradient(to right,
+            rgba(19, 100, 152, 0.8),
+            rgba(210, 88, 27, 0.7),
+            rgba(19, 100, 152, 0.8));
+    color: white;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25),
+        inset 0 4px 4px rgba(255, 255, 255, 0.3);
+    z-index: 90;
+}
+
+/* BACKSIDE TOPBAR */
+.back-topbar {
+    position: fixed;
+    top: 80px;
+    left: 240px;
+    right: 0;
+    height: 50px;
+    background-color: white;
+    z-index: 80;
+}
+
+.first,
+.second,
+.third,
+.fourth {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.menu-icon,
+.revenue-icon,
+.bookmark-icon {
+    font-size: 18px;
+}
+
+body.sidebar-collapsed .top-bar,
+body.sidebar-collapsed .back-topbar {
+    left: 70px;
+}
+
+.sidebar,
+.top-bar,
+.back-topbar {
+    transition: all 0.3s ease;
+}
+
+
+/* RESPONSIVE MEDIA QUERIES For HEADER, TOPBAR & SIDEBAR */
+@media (max-width: 1200px) {
+    .search-container input {
+        width: 450px;
+    }
+}
+
+@media (max-width: 1150px) {
+    .search-container input {
+        width: 400px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .search-container input {
+        width: 350px;
+    }
+}
+
+@media (max-width: 1050px) {
+    .search-container input {
+        width: 300px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .search-container input {
+        width: 250px;
+    }
+
+    .notification {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 885px) {
+
+    .wallet-btn span,
+    .wallet-btn p {
+        display: none;
+    }
+}
+
+@media (max-width: 800px) {
+    .header {
+        gap: 20px;
+    }
+
+    .header-right {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-right {
+        padding-right: 25px;
+    }
+
+    .logo {
+        margin-left: 25px;
+        margin-right: 0;
+    }
+
+    .search-container input {
+        width: 300px;
+    }
+
+    .user-info {
+        display: none;
+    }
+
+    .user-profile {
+        display: flex;
+    }
+}
+
+@media (max-width: 650px) {
+    .search-container input {
+        width: 250px;
+    }
+}
+
+@media (max-width: 590px) {
+    .search-container input {
+        width: 200px;
+    }
+}
+
+@media (max-width: 550px) {
+    .header {
+        gap: 20px;
+    }
+
+    .header-right {
+        gap: 15px;
+        padding-right: 10px;
+    }
+
+    .logo {
+        height: 80px;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .header {
+        gap: 15px;
+    }
+
+    .header-right {
+        gap: 10px;
+        padding-right: 10px;
+    }
+
+    .logo {
+        height: 80px;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 460px) {
+    .search-container input {
+        width: 170px;
+    }
+
+    .search-container input::placeholder {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+}
+
+@media (max-width: 435px) {
+    .header {
+        gap: 10px;
+    }
+
+    .search-container input {
+        width: 150px;
+    }
+}
+
+@media (max-width: 403px) {
+    .search-container input {
+        width: 125px;
+    }
+}
+
+@media (max-width: 365px) {
+    .search-container input {
+        width: 100px;
+    }
+}
+
+@media (max-width: 340px) {
+    .search-container input {
+        width: 65px;
+    }
+}
+
+/* --- TOPBAR SCROLLABLE At SMALLER WIDTHS --- */
+@media (max-width: 1019px) {
+    .top-bar {
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        flex-wrap: nowrap;
+        gap: 20px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .top-bar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .top-bar .first,
+    .top-bar .second,
+    .top-bar .third,
+    .top-bar .fourth {
+        flex: 0 0 auto;
+        min-width: max-content;
+    }
+}
+
+
+
+.rate-calculator-main {
+    border-top: 1px solid transparent;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: calc(100vh - 130px);
+    margin-top: 130px;
+    margin-left: 240px;
+    transition: margin-left 0.3s ease;
+    scrollbar-width: none;
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+body.sidebar-collapsed .rate-calculator-main {
+    margin-left: 70px;
+}
+
+footer {
+    background-color: white;
+    color: rgba(100, 155, 197, 1);
+    font-family: 'poppins';
+    font-weight: 400;
+    font-size: 12px;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    padding: 10px 0 10px 0;
+    margin-top: auto;
+}
+
+.rate-calculator-section {
+    margin: 40px 30px;
+}
+
+.header-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'poppins';
+}
+
+.title {
+    background: linear-gradient(to right, rgba(100, 155, 197, 1), rgba(210, 88, 27, 0.7));
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
+    font-size: 24px;
+    padding-left: 5px;
+}
+
+.rate-container {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+    font-family: 'poppins';
+    font-weight: 400;
+    gap: 70px;
+    width: 100%;
+}
+
+.calculator-box,
+.partners-box {
+    width: calc(50% - 35px);
+    min-width: 0;
+    background-color: white;
+    border-radius: 9px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.calculator-box {
+    height: 100%;
+
+}
+
+.partners-box {
+    height: 70%;
+}
+
+.upper-box {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 25px;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.25);
+    justify-content: space-between;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.input-group label {
+    font-size: 14px;
+    color: rgba(100, 155, 197, 1);
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    max-width: 315px;
+    min-width: 50px;
+    padding: 6px 10px;
+    font-size: 12px;
+    border: none;
+    border-radius: 9px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.input-group input {
+    color: black;
+}
+
+.input-group input::placeholder {
+    color: rgba(0, 0, 0, 0.25);
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(100, 155, 197, 0.5);
+}
+
+.input-group select {
+    color: rgba(0, 0, 0, 0.25);
+}
+
+.input-group select option {
+    color: rgba(0, 0, 0, 0.25);
+}
+
+.input-group select option:first-child {
+    color: rgba(0, 0, 0, 0.25);
+}
+
+.input-group select:valid {
+    color: black;
+}
+
+
+.dimensions-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    background-color: rgba(100, 155, 197, 0.2);
+    padding: 15px 10px 10px 10px;
+    border-radius: 9px;
+}
+
+#dimensions-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    gap: 5px;
+    width: 100%;
+}
+
+
+.dimensions-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 5px 5px 10px 5px;
+    flex-wrap: wrap;
+
+}
+
+
+
+.dimensions-box p {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+}
+
+.dimensions-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.dimensions-group label {
+    font-size: 14px;
+    color: rgba(100, 155, 197, 1);
+}
+
+.dimensions-group input {
+    min-width: 30px;
+    width: 100%;
+    max-width: 150px;
+    padding: 6px 10px;
+    font-size: 12px;
+    border: none;
+    color: black;
+    border-radius: 9px;
+    transition: border-color 0.2s ease, box-shadow 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.dimensions-group input::placeholder {
+    color: rgba(0, 0, 0, 0.25);
+}
+
+.dimensions-group input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(100, 155, 197, 0.5);
+}
+
+.dimensions-box .add-more-btn,
+.dimensions-box .remove-btn {
+    align-self: center;
+    justify-content: center;
+    background-color: rgba(210, 88, 27, 0.7);
+    color: white;
+    border: none;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dimensions-box .add-more-btn {
+    padding: 3px 15px;
+    font-size: 13px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+.dimensions-box .remove-btn {
+    display: none;
+}
+
+.dimensions-box .close-btn {
+    font-size: 20px;
+    line-height: 1;
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+    padding: 3px 5px;
+}
+
+.dimensions-btn-part {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.middle-box {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: space-between;
+    padding: 20px 25px;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.checkbox-group span {
+    font-size: 14px;
+    color: rgba(100, 155, 197, 1);
+}
+
+.check-box {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    gap: 5px;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+input[type="radio"] {
+    width: 13px;
+    height: 13px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 1.5px solid rgba(100, 155, 197, 1);
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+input[type="radio"]:checked {
+    background-color: rgba(100, 155, 197, 1);
+    border: none;
+}
+
+input[type="radio"]::after {
+    content: "✓";
+    color: white;
+    font-size: 10px;
+    position: absolute;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.2s ease;
+}
+
+input[type="radio"]:checked::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.buttons-box {
+    display: flex;
+    flex-direction: row !important;
+    flex-wrap: nowrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 15px 25px 35px 25px;
+}
+
+.buttons-box button {
+    font-size: 14px;
+    padding: 6px 0;
+    flex: 1 1 auto;
+    max-width: 160px;
+    min-width: 60px;
+    border-radius: 5px;
+}
+
+.calculate-btn {
+    background-color: rgba(100, 155, 197, 1);
+    color: white;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.reset-btn {
+    background-color: white;
+    color: rgba(100, 155, 197, 1);
+    border: 1px solid rgba(100, 155, 197, 1);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.partners-box {
+    background-color: rgba(100, 155, 197, 0.2);
+    border-radius: 9px;
+    padding: 25px;
+}
+
+.delivery-map {
+    background-color: white;
+    position: relative;
+    display: none;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px 20px 40px 20px;
+    border-radius: 9px;
+}
+
+.delivery-map h3 {
+    color: rgba(100, 155, 197, 1);
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.map-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.map-container img {
+    width: auto;
+    height: 250px;
+}
+
+.delivery-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.delivery-both {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.delivery-summary .delivery-type {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    background-color: white;
+    border-radius: 9px;
+    padding: 15px 20px;
+}
+
+.delivery-summary .delivery-logo {
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 9px;
+}
+
+.delivery-summary .delivery-logo img {
+    height: 50px;
+    width: auto;
+}
+
+.delivery-summary .delivery-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: 'poppins';
+    font-weight: 400;
+}
+
+.delivery-summary .delivery-content .delivery-description {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+.delivery-description .delivery-left {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.delivery-description .delivery-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.delivery-left .delivery-company-name {
+    font-size: 14px;
+    color: rgba(100, 155, 197, 1);
+}
+
+.delivery-left .delivery-weight {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.25);
+}
+
+.delivery-right .delivery-price {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.25);
+}
+
+.delivery-right .delivery-charges {
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.25);
+}
+
+.delivery-content .delivery-button {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.delivery-content .dropdown-button {
+    color: white;
+    background-color: rgba(100, 155, 197, 1);
+    border-radius: 9px;
+    border: none;
+    padding: 7px 0;
+    width: 180px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    gap: 7px;
+    justify-content: center;
+}
+
+.dropdown-button span {
+    font-size: 12px;
+}
+
+.dropdown-button .dropdown-icon {
+    font-size: 13px;
+}
+
+.delivery-description-panel {
+    background-color: white;
+    padding: 10px;
+    border-bottom-right-radius: 9px;
+    border-bottom-left-radius: 9px;
+}
+
+.delivery-description-panel .description-list {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(100, 155, 197, 0.2);
+    border-radius: 9px;
+    padding: 10px;
+    gap: 5px;
+}
+
+.description-list li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.description-list li p {
+    color: rgba(100, 155, 197, 1);
+    font-size: 11px;
+}
+
+@media (max-width: 1190px) {
+    .delivery-content .delivery-description {
+        flex-direction: column !important;
+        gap: 10px !important;
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 1034px) {
+    .delivery-summary {
+        flex-direction: row;
+    }
+
+    .sidebar.collapsed .delivery-description {
+        flex-direction: row !important;
+
+    }
+}
+
+@media (min-width: 1400px) {
+
+    /* Only when sidebar is collapsed */
+    body.sidebar-collapsed .calculator-box .upper-box {
+        flex-direction: column;
+        gap: 30px;
+        /* spacing between input-box and dimensions-box */
+    }
+
+    body.sidebar-collapsed .calculator-box .input-box {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        width: 100%;
+    }
+
+    body.sidebar-collapsed .calculator-box .input-group {
+        width: 100%;
+    }
+
+    body.sidebar-collapsed .calculator-box .dimensions-content {
+        display: flex;
+        /* single row */
+        flex-direction: row;
+        /* horizontal alignment */
+        gap: 20px;
+        /* spacing between inputs */
+        justify-content: center;
+        /* center the whole row */
+        align-items: flex-start;
+        /* align tops of inputs */
+        flex-wrap: nowrap;
+        /* prevent wrapping */
+        width: 100%;
+    }
+}
+
+
+@media (min-width: 1242px) {
+
+    /* Upper box: row layout */
+    .calculator-box .upper-box {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        /* spacing between input-box and dimensions-box */
+        justify-content: space-between;
+    }
+
+    /* Input-box and Dimensions-box share equal width */
+    .calculator-box .input-box,
+    .calculator-box .dimensions-box {
+        flex: 1;
+        max-width: none;
+    }
+
+    .calculator-box .dimensions-box p {
+        text-align: left;
+        padding-left: 5px;
+    }
+
+    /* Dimensions content as 2x2 grid and centered */
+    .calculator-box .dimensions-content {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .calculator-box .dimensions-group {
+        width: 100%;
+        max-width: 150px;
+        /* optional: keeps inputs compact */
+    }
+
+    /* Buttons normal row layout */
+    .calculator-box .buttons-box {
+        flex-direction: row;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    /* Checkbox groups normal row layout */
+    .calculator-box .middle-box {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 20px;
+    }
+}
+
+
+@media (max-width: 1200px) {
+    body.sidebar-collapsed .calculator-box .upper-box {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        /* adjust as needed */
+    }
+
+    body.sidebar-collapsed .calculator-box .input-box,
+    body.sidebar-collapsed .calculator-box .dimensions-box {
+        flex: 1;
+        /* share remaining space equally */
+        max-width: none;
+        /* remove previous width restrictions */
+    }
+
+    /* ✅ center dimensions content when sidebar is collapsed */
+    body.sidebar-collapsed .calculator-box .dimensions-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* vertical centering if needed */
+        align-items: center;
+        /* horizontal centering */
+    }
+
+    body.sidebar-collapsed .calculator-box .dimensions-content {
+        display: flex;
+        flex-direction: column;
+        /* or grid if 2x2 layout is needed */
+        gap: 15px;
+        align-items: center;
+        /* horizontal centering of inputs */
+        width: 100%;
+    }
+}
+
+
+
+@media (max-width: 1160px) {
+
+    /* stack input-box above dimensions-box */
+    .calculator-box .upper-box {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    /* arrange input-box fields in 2x2 grid */
+    .calculator-box .input-box {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .calculator-box .input-group {
+        width: 100%;
+    }
+
+    /* each dimensions set becomes 2x2 grid */
+    .calculator-box #dimensions-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .calculator-box .dimensions-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        width: 100%;
+    }
+
+    .calculator-box .dimensions-group {
+        width: 100%;
+    }
+
+    /* ✅ shrink dimensions inputs */
+    .calculator-box .dimensions-group input {
+        width: 100%;
+        min-width: 40px;
+        /* won’t collapse too much */
+        max-width: 150px;
+        /* keeps them compact */
+        justify-self: center;
+    }
+
+    .dimensions-box p {
+        text-align: left;
+        padding-left: 5px;
+    }
+
+    .buttons-box {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 1111px) {
+
+    /* ✅ stack input-box and dimensions-box */
+    .calculator-box .upper-box {
+        flex-direction: column;
+    }
+
+    /* ✅ input fields full width in one column */
+    .calculator-box .input-box {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* ✅ stack checkbox groups vertically */
+    .calculator-box .middle-box {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .dimensions-box p {
+        text-align: left;
+        padding-left: 5px;
+    }
+}
+
+
+/* <= 1035px: 
+   1. calculator + partners stack in column 
+   2. input-box becomes 2x2 grid again */
+@media (max-width: 1035px) {
+    .rate-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .calculator-box,
+    .partners-box {
+        width: 100%;
+    }
+
+    .calculator-box .input-box {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        width: 100%;
+    }
+
+    /* ✅ dimensions content in one row */
+    .calculator-box .dimensions-content {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        flex-wrap: wrap;
+        /* allow wrapping if space is tight */
+    }
+
+    .calculator-box .dimensions-group {
+        flex: 1;
+        /* make inputs share space equally */
+        min-width: 40px;
+        max-width: 150px;
+    }
+
+    .calculator-box .middle-box {
+        display: flex;
+        flex-wrap: wrap;
+        /* allow wrapping on smaller screens */
+        gap: 20px;
+        justify-content: space-between;
+        /* distribute space between checkbox groups */
+        padding: 20px 25px;
+    }
+
+    .calculator-box .middle-box .checkbox-group {
+        flex: 0 1 auto;
+        /* allow width to shrink or grow naturally */
+    }
+
+
+
+
+    .dimensions-box p {
+        text-align: left;
+        padding-left: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .calculator-box .upper-box {
+        flex-direction: column !important;
+    }
+
+    .calculator-box .input-box .input-group input,
+    .calculator-box .input-box .input-group select {
+        max-width: 290px;
+    }
+
+    /* Make dimensions box content horizontal */
+    .calculator-box .dimensions-box {
+        flex-direction: row;
+        /* parent still row */
+        justify-content: flex-start;
+        gap: 15px;
+        width: 100%;
+        /* center the whole box */
+    }
+
+    .calculator-box .dimensions-box p {
+        text-align: left !important;
+        align-self: flex-start;
+        padding-left: 5px;
+    }
+
+    .calculator-box .dimensions-content {
+        display: flex !important;
+        /* flex container */
+        flex-direction: row !important;
+        /* horizontal alignment */
+        gap: 15px;
+        /* spacing between inputs */
+        flex-wrap: nowrap;
+        /* single row only */
+        justify-content: center;
+        /* center inputs inside */
+        align-items: flex-start;
+        /* align tops of inputs */
+        width: auto;
+        /* shrink to content */
+    }
+}
+
+@media (max-width: 768px) {
+    body:not(.sidebar-collapsed) .dimensions-box {
+        flex-direction: column;
+    }
+
+    /* Sidebar open -> 2x2 grid for dimensions content */
+    body:not(.sidebar-collapsed) .calculator-box .dimensions-content {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        gap: 15px; /* spacing between inputs */
+        justify-items: center; /* center each input in its column */
+        width: 100%;
+    }
+
+    body:not(.sidebar-collapsed) .calculator-box .dimensions-group {
+        width: 100%;
+        max-width: 150px; /* keep inputs compact */
+    }
+}
+
+@media (max-width: 670px) {
+    /* Sidebar open -> stack input-box and dimensions-content in single column */
+    body:not(.sidebar-collapsed) .calculator-box .input-box {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px;
+        width: 100%;
+    }
+
+    body:not(.sidebar-collapsed) .calculator-box .input-box .input-group input,
+    body:not(.sidebar-collapsed) .calculator-box .input-box .input-group select {
+        max-width: 315px;
+    }
+}
+
+@media (max-width: 630px) {
+    body:not(.sidebar-collapsed) .delivery-map h3 {
+        text-align: center;
+    }
+
+    /* only when sidebar is NOT collapsed */
+    body:not(.sidebar-collapsed) .map-container img {
+        width: 80%;
+        /* shrink image width */
+        height: auto;
+        /* maintain aspect ratio */
+        max-width: 230px;
+    }
+}
+
+@media (max-width: 600px) {
+    .calculator-box .dimensions-content {
+        display: grid !important;                  /* switch to grid */
+        grid-template-columns: repeat(2, 1fr);     /* 2 columns */
+        gap: 15px;                                 /* spacing between inputs */
+        justify-items: center;                     /* center items in each cell */
+        width: 100%;
+    }
+
+    .calculator-box .dimensions-group {
+        width: 100%;
+        max-width: 150px; /* optional: keeps inputs compact */
+    }
+}
+
+/* <= 600px: sidebar collapsed -> 2x2 grid */
+@media (max-width: 600px) {
+    body.sidebar-collapsed .calculator-box .dimensions-content {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        justify-items: center;
+        width: 100%;
+    }
+
+    body.sidebar-collapsed .calculator-box .dimensions-group {
+        width: 100%;
+        max-width: 150px; /* keeps inputs compact */
+    }
+
+    /* Sidebar open -> flex column */
+    body:not(.sidebar-collapsed) .calculator-box .dimensions-content {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px;
+        width: 100%;
+        align-items: center;
+    }
+}
+
+
+
+
+
+
+@media (max-width: 535px) {
+
+    /* only when sidebar is NOT collapsed */
+    body:not(.sidebar-collapsed) .calculator-box .dimensions-content {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px;
+        width: 100%;
+    }
+
+    body:not(.sidebar-collapsed) .calculator-box .dimensions-group {
+        width: 100%;
+        max-width: none;
+        /* remove previous max-width */
+    }
+
+    .checkbox-group {
+        gap: 4px;
+    }
+
+    /* only when sidebar is NOT collapsed */
+    body:not(.sidebar-collapsed) .calculator-box .buttons-box {
+        flex-direction: column !important;
+        gap: 15px;
+        /* spacing between buttons */
+        width: 100%;
+    }
+
+    body:not(.sidebar-collapsed) .calculator-box .buttons-box button {
+        width: 100%;
+        /* make each button full width */
+    }
+}
+
+
+@media (max-width: 505px) {
+    .calculator-box .input-box {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .calculator-box .input-group {
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .map-container img {
+        width: 90%;
+        /* shrink relative to container */
+        max-width: 250px;
+        /* prevent it from being too large */
+        height: auto;
+        /* maintain aspect ratio */
+        display: block;
+        /* for centering */
+        margin: 0 auto;
+        /* center horizontally */
+    }
+}
+
+@media (max-width: 400px) {
+
+    /* When sidebar is collapsed */
+    body.sidebar-collapsed .calculator-box .dimensions-content {
+        display: flex !important;
+        flex-direction: column !important; /* stack vertically */
+        gap: 15px;
+        width: 100%;
+        align-items: center; /* center horizontally */
+    }
+
+    /* When sidebar is NOT collapsed */
+    body:not(.sidebar-collapsed) .calculator-box .dimensions-content {
+        display: flex !important;
+        flex-direction: column !important; /* stack vertically */
+        gap: 15px;
+        width: 100%;
+        align-items: center;
+    }
+
+    .calculator-box .dimensions-group {
+        width: 100% !important;
+        max-width: 150px; /* keeps inputs compact */
+    }
+
+    .calculator-box .upper-box {
+        padding: 20px 15px;
+    }
+
+    .calculator-box .middle-box {
+        padding: 20px 15px;
+    }
+
+    .calculator-box .buttons-box {
+        padding: 15px 15px 20px 15px;
+    }
+}
+
+
+@media (max-width: 365px) {
+    .dimensions-box p {
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .buttons-box {
+        flex-direction: column !important;
+        gap: 15px;
+        /* spacing between buttons */
+    }
+
+    .buttons-box button {
+        width: 100% !important;
+        /* make buttons full width of container */
+        max-width: 100%;
+        /* optional safety */
+    }
+}

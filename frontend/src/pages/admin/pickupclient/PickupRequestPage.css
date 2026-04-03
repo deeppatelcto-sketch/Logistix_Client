@@ -1,0 +1,113 @@
+.pickup-container {
+  padding: 1rem;
+  background: #f7f7f9;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.pickup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pickup-header h2 {
+  font-weight: bold;
+}
+
+.add-btn {
+  background-color: #649BC5;
+  color: white;
+  padding: 0.5rem 2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background-color: #ccc;
+  padding: 0.5rem 1rem;
+  margin-left: 10px;
+  border-radius: 4px;
+  border: none;
+}
+
+.search-box {
+  margin: 1rem 0;
+}
+
+.search-box input {
+  width: 300px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.pickup-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.pickup-table th,
+.pickup-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.badge {
+  background: #28f1ae;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.form-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.form-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  width: 600px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  margin-top: -210px;
+  margin-right: -900px;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.form-row input,
+.form-row select {
+  flex: 1;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.form-actions {
+  text-align: right;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #649BC5, #D2581B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+

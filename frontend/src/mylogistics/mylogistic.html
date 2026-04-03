@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyLogistix Navbar</title>
+    <link rel="stylesheet" href="mylogistic.css">
+</head>
+<body>
+    <!-- navbar start -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="/images/navlogo.png" alt="MyLogistix Logo">
+        </div>
+    
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="track.html"><button class="track-btn">Track</button></a></li>
+        </ul>
+    </nav>
+    <!-- navbar end -->
+     <!-- slider start -->
+    <div class="slider-container">
+        <!-- Radio Buttons for Navigation -->
+        <input type="radio" name="slider" id="slide1" checked>
+        <input type="radio" name="slider" id="slide2">
+        <input type="radio" name="slider" id="slide3">
+
+        <div class="slides">
+            <!-- Slide 1 -->
+            <div class="slide">
+                <div class="hero-text">
+                    <h1>Xpress <br> <span class="highlight">Logistics</span></h1>
+                    <p>V-Xpress is the logistic specialist for many industries. Grow your business with our nationwide network, on-time delivery commitment, and real-time tracking facilities.</p>
+                </div>
+                <div class="hero-image">
+                    <img src="images/slide1img.png" alt="Delivery Workers">
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide">
+                <div class="hero-text">
+                    <h1>Fast </h1><br><h3> <span class="highlight">Shipping</span></h3>
+                    <p>We provide fast and efficient shipping solutions with real-time tracking and hassle-free deliveries.</p>
+                </div>
+                <div class="hero-image">
+                    <img src="images/slide1img.png" alt="Shipping">
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide">
+                <div class="hero-text">
+                    <h1>Fast </h1><br><h3> <span class="highlight">Shipping</span></h3>
+                    <p>We provide fast and efficient shipping solutions with real-time tracking and hassle-free deliveries.</p>
+                </div>
+                <div class="hero-image">
+                    <img src="images/slide1img.png" alt="Shipping">
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Dots -->
+        <div class="navigation">
+            <label for="slide1" class="nav-dot"></label>
+            <label for="slide2" class="nav-dot"></label>
+            <label for="slide3" class="nav-dot"></label>
+        </div>
+    </div>
+    <!-- slider end -->
+
+
+   
+    <!-- Services Section -->
+    <section class="services-container">
+        <div class="service">
+            <img src="/images/midd1.png" alt="Ecommerce">
+            <h3>Ecommerce Shipping</h3>
+            <p>Empowering businesses in digital commerce.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="service">
+            <img src="/images/midd2.png" alt="Document Courier">
+            <h3>Document Courier</h3>
+            <p>Secure delivery of legal and accounting documents.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="service">
+            <img src="/images/midd3.png" class="midd3"  alt="Air Logistics">
+            <h3>Air Logistics</h3>
+            <p>Fast cargo transport by air.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="service">
+            <img src="/images/midd4.png" class="midd4"  alt="Road Logistics">
+            <h3>Road Logistics</h3>
+            <p>Efficient cargo transport by trucks.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="service">
+            <img src="/images/midd5.png" class="midd5" alt="Rail Logistics">
+            <h3>Rail Logistics</h3>
+            <p>Efficient cargo transport by trains.</p>
+        </div>
+    </section>
+     <!-- Services Section end -->
+
+    <!-- Detailed Services -->
+    <section class="details">
+    <div class="detail1">
+        <div class="detail-box" style="margin-top: 0;">
+            <h2><span class="highlight">E</span>Commerce Shipping</h2>
+            <p style="text-align: justify;">In the dynamic world of Ecommerce-Retail, optimizing shipping costs is paramount. Our unique solution not only reduces expenses but also offers early Cash-On-Delivery (COD), extensive service coverage, and swift shipment processing to enhance your competitiveness.</p>
+        </div>
+        <div class="detailimg">
+            <img src="/images/image 19.png" alt="img1" class="img1" style="height: 300px; margin-top: 30px;" >
+        </div>
+    </div>
+
+    <div class=" reverse">
+
+        <div class="detailimg1">
+            <img src="/images/image (1).png" alt="img2" class="img2">
+        </div>
+        <div class="detail-box1 " >
+            <h2><span class="highlight" >D</span >ocument courier</h2>
+            <p style="text-align: justify;">Document courier services specialize in the secure and timely delivery of important paperwork, including legal documents, contracts, passports, and business files. These services ensure confidentiality, reliability, and fast transit times through express shipping, same-day delivery, and international courier options.</p>
+        </div>
+       
+       
+    </div>
+
+    <div class="detail1">
+        <div class="detail-box">
+            <h2><span class="highlight">A</span>ir logistic</h2>
+            <p style="text-align: justify;">Air logistics services include the transportation, handling, and management of cargo via air freight. These services ensure fast and reliable delivery of goods across domestic and international routes. Key offerings include express shipping, freight forwarding, customs clearance, cargo tracking, and warehousing.</p>
+        </div>
+        <div class="detailimg">
+            <img src="/images/image 20.png" alt="img1" class="img1">
+        </div>
+    </div>
+
+    <div class=" reverse">
+
+        <div class="detailimg1">
+            <img src="/images/image 21.png" alt="img2" class="img2">
+        </div>
+        <div class="detail-box1">
+            <h2 ><span class="highlight" >R</span>oad logistic</h2>
+            <p style="text-align: justify;">Road logistics services involve the transportation and distribution of goods via trucks, vans, and other vehicles. These services ensure efficient movement of cargo across cities, regions, and borders. Key offerings include freight transport, last-mile delivery, express shipping, warehousing, and supply chain management.</p>
+        </div>
+      
+       
+    </div>
+
+    <div class="detail1">
+        <div class="detail-box">
+            <h2><span class="highlight">R</span>ail logistic</h2>
+            <p style="text-align: justify;">Rail logistics services involve the transportation of goods using railway networks, offering a cost-effective and sustainable solution for bulk and long-distance shipments. Key services include freight transport, intermodal logistics, cargo handling, warehousing, and supply chain management.</p>
+        </div>
+        <div class="detailimg">
+            <img src="/images/image 22.png" alt="img1" class="img1" style="margin-top: -50px;">
+        </div>
+    </div>
+
+    
+    </section>
+    <!--  Detailed Services end -->
+
+<!-- footerimg start -->
+    <div class="footerimg">
+        <h1 class="footerimgh1">Delivering Items in all over India</h1>
+        <div class="fimgdiv">
+            <img src="images/image 26.png" alt="footer img"  class="fimg">
+
+        </div>
+    </div>
+    <!-- footer img end -->
+
+<!-- footer start -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section company">
+            <img src="images/navlogo.png" alt="MYLOGISTIX Logo" style="height: 250px; width: 250px;">
+           
+            <p>Welcome to TRUXCARGO! <br>
+               We are a pioneering logistics technology company with a mission to transform the way goods are moved, managed, and delivered.
+            </p>
+        </div>
+        <div class="footer-section">
+            <h3>SERVICES</h3>
+            <ul>
+                <li>Ecommerce Shipping</li>
+                <li>Document Courier</li>
+                <li>Air Logistics</li>
+                <li>Road Logistics</li>
+                <li>Rail Logistics</li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>SOLUTIONS</h3>
+            <ul>
+                <li>Personal Courier</li>
+                <li>B2B Enterprises</li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>POLICIES</h3>
+            <ul>
+                <li>Terms & Conditions</li>
+                <li>Privacy Policy</li>
+                <li>Cookie Policy</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        Copyright © 2025 MYLOGISTIX. All rights reserved.
+    </div>
+</footer>
+ <!-- footer end -->
+
+
+       <script src="mylogistic.js"></script>
+
+</body>
+</html>

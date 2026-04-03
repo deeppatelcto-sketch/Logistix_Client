@@ -1,0 +1,265 @@
+/* ========== Fonts and Base Styles ========== */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+input, button {
+  font-family: inherit;
+}
+
+/* ========== Header ========== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  height: 40px;
+}
+
+.toggle-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: #f1f3f5;
+  border-radius: 8px;
+  padding: 5px 10px;
+}
+
+.search-container input {
+  border: none;
+  background: transparent;
+  padding: 5px;
+  outline: none;
+}
+
+.search-icon {
+  color: gray;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.wallet-btn {
+  background: #e9ecef;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.notification {
+  position: relative;
+}
+
+.notification .count {
+  background: red;
+  color: white;
+  font-size: 12px;
+  border-radius: 50%;
+  padding: 2px 6px;
+  position: absolute;
+  top: -5px;
+  right: -10px;
+}
+
+.user-info .welcome-text {
+  font-size: 14px;
+  color: #555;
+}
+
+.user-info .user-id {
+  font-weight: bold;
+}
+
+/* ========== Sidebar ========== */
+.sidebar {
+  width: 250px;
+  background: #fff;
+  border-right: 1px solid #dee2e6;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  bottom: 0;
+  padding: 10px 0;
+  overflow-y: auto;
+  transition: width 0.3s ease;
+}
+
+.sidebar.collapsed {
+  width: 70px;
+}
+
+.sidebar-link {
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #333;
+}
+
+.sidebar-link:hover {
+  background-color: #f1f3f5;
+}
+
+.sidebar-icons {
+  margin-right: 12px;
+}
+
+.right-arrow-icon {
+  margin-left: auto;
+  font-size: 20px;
+  color: #999;
+}
+
+/* ========== Main Section ========== */
+.main-section {
+  margin-left: 250px;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar.collapsed + .main-section {
+  margin-left: 70px;
+}
+
+.pickup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-request-btn {
+  background: #0d6efd;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-request-btn:hover {
+  background: #0b5ed7;
+}
+
+/* ========== Pickup Form Modal ========== */
+.pickup-form-modal {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pickup-form {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 95%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  padding: 8px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.form-buttons button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-buttons button[type="submit"] {
+  background: #198754;
+  color: white;
+}
+
+.form-buttons button[type="button"] {
+  background: #dee2e6;
+}
+
+/* ========== Pickup Table ========== */
+.pickup-search {
+  margin: 20px 0;
+}
+
+.pickup-search input {
+  width: 250px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ced4da;
+}
+
+.pickup-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.pickup-table th,
+.pickup-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.pickup-table th {
+  background: #f8f9fa;
+  font-weight: 600;
+}
+
+.pickup-table tr:hover {
+  background: #f1f3f5;
+}
